@@ -114,6 +114,4 @@ Thomaszewski,
 
 "Computational design of mechanical characters." \[Online\]. Available:
 
-https://studios.disneyresearch.com/wp-content/uploads/2019/03/Computational-Design-o
-
-f-Mechanical-Characters-1.pdf.
+https://studios.disneyresearch.com/wp-content/uploads/2019/03/Computational-Design-of-Mechanical-Characters-1.pdf.
