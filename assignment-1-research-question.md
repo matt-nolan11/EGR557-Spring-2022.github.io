@@ -24,8 +24,8 @@ developing foldable mechanism with a required output and is choosing
 biomimicry as a parameter to judge the effectiveness of the output for
 the layman. The second constraint is that the same piece of hardware
 with or without minimal changes to itself should be able to have a
-different motion at the end effector. The aforementioned ΓÇÿminimal
-changeΓÇÖ would be preferably automated and would react to a certain
+different motion at the end effector. The aforementioned "minimal
+change" would be preferably automated and would react to a certain
 trigger switch which may or may not be remotely activated. This change
 in output can be, but not limited to, a change in length of the links or
 by folding on a different crease/axis as compared to the initial
@@ -37,7 +37,7 @@ quadrupedal robot. If the aforementioned challenge is easier than
 expected then the team might explore the possibility of developing a
 quadrupedal robot with the said mechanism.
 
-<u>Novelty: (Nathan)</u> The teamΓÇÖs current research question is based
+<u>Novelty: (Nathan)</u> The team's current research question is based
 on a paper by the Disney Research Institute on the ΓÇ£Computational Design
 of Mechanical CharactersΓÇ¥. The paper outlines a methodology in which
 researchers could mimic the various locomotive geometries of gaits found
@@ -112,7 +112,7 @@ References:
 S. Coros, B. Bickel, M. Forberg, G. Noris, S. Sueda, B. Sumner, B.
 Thomaszewski,
 
-ΓÇ£Computational design of mechanical characters.ΓÇ¥ \[Online\]. Available:
+"Computational design of mechanical characters." \[Online\]. Available:
 
 https://studios.disneyresearch.com/wp-content/uploads/2019/03/Computational-Design-o
 
