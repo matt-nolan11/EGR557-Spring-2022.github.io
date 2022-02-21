@@ -110,8 +110,5 @@ needs foldable robotics for a majority of its parts to answer it.
 References:
 
 S. Coros, B. Bickel, M. Forberg, G. Noris, S. Sueda, B. Sumner, B.
-Thomaszewski,
-
-"Computational design of mechanical characters." \[Online\]. Available:
-
+Thomaszewski, "Computational design of mechanical characters." \[Online\]. Available:
 https://studios.disneyresearch.com/wp-content/uploads/2019/03/Computational-Design-of-Mechanical-Characters-1.pdf.
