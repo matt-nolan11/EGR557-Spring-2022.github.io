@@ -17,6 +17,6 @@ How can we utilize foldable techniques to develop and incrementally adjust the g
 
 ## Team Assignments
 
-[Assignment 1: Developing a Research Question](/assignment-1-research-question)
+[Assignment 1: Developing a Research Question](/assignment-1-research-question)\
 [Assignment 2: Biomechanics Background and Initial Specifications](/assignment-2-biomechanics)
 
