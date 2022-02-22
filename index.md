@@ -19,5 +19,5 @@ How can we utilize foldable techniques to develop and incrementally adjust the g
 
 [Assignment 1: Developing a Research Question](/assignment-1-research-question)\
 [Assignment 2: Biomechanics Background and Initial Specifications](/assignment-2-biomechanics)\
-[Assignment 3: System Kinematics](/assignment-3-system-kinematics)
+[Assignment 3: System Kinematics](/assignment-3-system-kinematics)\
 
