@@ -1,4 +1,4 @@
-#**Systems Kinematics**
+**Systems Kinematics**
 
 Members: Viraj Kanchan, Nathan Mayer, Shubang Mukund, Matthew Nolan
 
@@ -12,7 +12,7 @@ Triple Pendulum Example Code: https://foldable-robotics.github.io/modules/dynami
 
 <img src='https://drive.google.com/uc?id=1n8KlDhqv8kxqkUDIxMgCXLMRzwZ3RAF0' width="600">
 
-##Paper Model
+Paper Model
 
 <img src='https://drive.google.com/uc?id=1UjM9wa0ghvNNOO5JXU1Iy3jgVrLcS6f2' width="300">
 
@@ -22,7 +22,7 @@ Triple Pendulum Example Code: https://foldable-robotics.github.io/modules/dynami
 
 
 
-##Pynamics Script
+Pynamics Script
 
 
 ```python
@@ -59,7 +59,7 @@ system = System()
 pynamics.set_system(__name__,system)
 ```
 
-### Parametrization:
+Parametrization:
 
 
 ```python
@@ -119,7 +119,7 @@ freq = Constant(3e0,'freq',system)
 
 
 ```python
-# Differentiable State Variables:
+Differentiable State Variables:
 
 qA1,qA1_d,qA1_dd = Differentiable('qA1',system)
 qB1,qB1_d,qB1_dd = Differentiable('qB1',system)
@@ -130,7 +130,7 @@ qB2,qB2_d,qB2_dd = Differentiable('qB2',system)
 
 
 ```python
-# Initial Values:
+Initial Values:
 
 initialvalues = {}
 initialvalues[qA1]=(0)*pi/180
@@ -151,7 +151,7 @@ statevariables = system.get_state_variables()
 ini = [initialvalues[item] for item in statevariables]
 ```
 
-### Kinematics:
+Kinematics:
 
 
 ```python
