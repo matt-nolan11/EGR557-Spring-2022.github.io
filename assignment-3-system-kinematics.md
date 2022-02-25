@@ -1,4 +1,4 @@
-# **Systems Kinematics**
+# Systems Kinematics:
 
 Members: Viraj Kanchan, Nathan Mayer, Shubang Mukund, Matthew Nolan
 
@@ -8,11 +8,11 @@ Code Adapted from the Triple Pendulum Example and Solving Nonlinear Four-Bar Con
 
 Triple Pendulum Example Code: https://foldable-robotics.github.io/modules/dynamics/generated/08-triple-pendulum-example/
 
-## System Kinematics Figure
+## System Kinematics Figure:
 
 <img src='https://drive.google.com/uc?id=1n8KlDhqv8kxqkUDIxMgCXLMRzwZ3RAF0' width="600">
 
-## Paper Model
+## Paper Model:
 
 <img src='https://drive.google.com/uc?id=1UjM9wa0ghvNNOO5JXU1Iy3jgVrLcS6f2' width="300">
 
@@ -22,7 +22,7 @@ Triple Pendulum Example Code: https://foldable-robotics.github.io/modules/dynami
 
 
 
-## Pynamics Script
+## Pynamics Script:
 
 
 ```python
@@ -33,6 +33,7 @@ use_constraints = False
 ```python
 # Import all necessary packages:
 
+#pip install pynamics
 import pynamics
 from pynamics.frame import Frame
 from pynamics.variable_types import Differentiable,Constant
@@ -65,21 +66,21 @@ pynamics.set_system(__name__,system)
 ```python
 # Create constant values for length, mass, springs, inertia, etc.
 
-lA1 = Constant(1,'lA1',system)
-lB1 = Constant(0.75,'lB1',system)
-lC1 = Constant(1,'lC1',system)
-lA2 = Constant(0.75,'lA2',system)
-lB2 = Constant(0.5,'lB2',system)
-lA3 = Constant(1.75,'lA3',system)
+lA1 = Constant(1/20,'lA1',system)
+lB1 = Constant(0.75/20,'lB1',system)
+lC1 = Constant(1/20,'lC1',system)
+lA2 = Constant(0.75/20,'lA2',system)
+lB2 = Constant(0.5/20,'lB2',system)
+lA3 = Constant(1.75/20,'lA3',system)
 
-mA1 = Constant(0.25,'mA1',system)
-mB1 = Constant(0.25,'mB1',system)
-mC1 = Constant(0.25,'mC1',system)
-mA2 = Constant(0.25,'mA2',system)
+mA1 = Constant(0.25/2,'mA1',system)
+mB1 = Constant(0.25/2,'mB1',system)
+mC1 = Constant(0.25/2,'mC1',system)
+mA2 = Constant(0.25/2,'mA2',system)
 mB2 = Constant(0,'mB2',system)
-mA3 = Constant(0.25,'mA3',system)
+mA3 = Constant(0.25/2,'mA3',system)
 
-m_body = Constant(5,'m_body',system)
+m_body = Constant(5/2,'m_body',system)
 
 m_tot = (mA1 + mB1 + mC1 + mA2 + mB2 + mA3) * 4 + m_body
 
@@ -135,13 +136,13 @@ qB2,qB2_d,qB2_dd = Differentiable('qB2',system)
 initialvalues = {}
 initialvalues[qA1]=(0)*pi/180
 initialvalues[qA1_d]=0*pi/180
-initialvalues[qB1]=(-100)*pi/180
+initialvalues[qB1]=(-110)*pi/180
 initialvalues[qB1_d]=0*pi/180
-initialvalues[qC1]=(-400)*pi/180
+initialvalues[qC1]=(-40)*pi/180
 initialvalues[qC1_d]=0*pi/180
-initialvalues[qA2]=(-150)*pi/180
+initialvalues[qA2]=(-130)*pi/180
 initialvalues[qA2_d]=0*pi/180
-initialvalues[qB2]=(70)*pi/180
+initialvalues[qB2]=(50)*pi/180
 initialvalues[qB2_d]=0*pi/180
 ```
 
@@ -205,7 +206,7 @@ pA2A3 = pA2B2 + lA3*B2.x
 ```python
 # Create an array of points:
 
-points = [pNA1,pA1B1,pB1C1,pC1B2,pNA2,pA2B2,pB2C1,pA2A3]
+points = [pC1B2,pB1C1,pA1B1,pNA1,pNA2,pA2B2,pB2C1,pA2A3]
 
 p = numpy.array(points)
 ```
@@ -254,9 +255,9 @@ print(pz1)
 ```
 
     px1: 
-    [0, 1, 0.869763866749802, 0.103719423630824, 0, -0.649519052838329, -0.562694964004864, -0.345634741921201]
+    [-0.00612702556393450, 0.0371742446252874, 0.0500000000000000, 0, 0, -0.0241045353632452, -0.0197633309215720, -0.00891031981738882]
     py1: 
-    [0, 0, -0.738605814759156, -1.38139342444570, 0, -0.375000000000000, -0.867403876506104, -2.09841356777136]
+    [-0.0602384732794716, -0.0352384732794716, 0, 0, 0, -0.0287266666169617, -0.0533468604422669, -0.114897345005530]
     pz1: 
     [0, 0, 0, 0, 0, 0, 0, 0]
     
@@ -265,7 +266,8 @@ print(pz1)
 ```python
 # 2D Plot (X vs. Z Axes)
 
-plt.plot(px1,py1,'b')
+plt.plot(px1[0:4],py1[0:4],'b')
+plt.plot(px1[4:l],py1[4:l],'b')
 plt.axis('equal')
 plt.xlabel('X')
 plt.ylabel('Y')
@@ -278,7 +280,7 @@ plt.title('2D Plot of X vs. Z Axes');
     
 
 
-### Solve for valid initial condition determined by independent variable
+### Solve for valid initial condition determined by independent variable:
 
 
 ```python
@@ -291,14 +293,14 @@ eq_vector = [pB2C1-pC1B2] # Output Should be Zero when End Points from Each Segm
 eq_scalar = []
 eq_scalar.append((eq_vector[0]).dot(N.x))
 eq_scalar.append((eq_vector[0]).dot(N.y))
-eq_scalar.append(qC1-0)
+
 eq_scalar
 ```
 
 
 
 
-    [-lA1*cos(qA1) + lA2*cos(qA2) + lB1*sin(qA1)*sin(qB1) - lB1*cos(qA1)*cos(qB1) - lB2*sin(qA2)*sin(qB2) + lB2*cos(qA2)*cos(qB2) - lC1*(-sin(qA1)*sin(qB1) + cos(qA1)*cos(qB1))*cos(qC1) - lC1*(-sin(qA1)*cos(qB1) - sin(qB1)*cos(qA1))*sin(qC1), -lA1*sin(qA1) + lA2*sin(qA2) - lB1*sin(qA1)*cos(qB1) - lB1*sin(qB1)*cos(qA1) + lB2*sin(qA2)*cos(qB2) + lB2*sin(qB2)*cos(qA2) - lC1*(-sin(qA1)*sin(qB1) + cos(qA1)*cos(qB1))*sin(qC1) - lC1*(sin(qA1)*cos(qB1) + sin(qB1)*cos(qA1))*cos(qC1), qC1]
+    [-lA1*cos(qA1) + lA2*cos(qA2) + lB1*sin(qA1)*sin(qB1) - lB1*cos(qA1)*cos(qB1) - lB2*sin(qA2)*sin(qB2) + lB2*cos(qA2)*cos(qB2) - lC1*(-sin(qA1)*sin(qB1) + cos(qA1)*cos(qB1))*cos(qC1) - lC1*(-sin(qA1)*cos(qB1) - sin(qB1)*cos(qA1))*sin(qC1), -lA1*sin(qA1) + lA2*sin(qA2) - lB1*sin(qA1)*cos(qB1) - lB1*sin(qB1)*cos(qA1) + lB2*sin(qA2)*cos(qB2) + lB2*sin(qB2)*cos(qA2) - lC1*(-sin(qA1)*sin(qB1) + cos(qA1)*cos(qB1))*sin(qC1) - lC1*(sin(qA1)*cos(qB1) + sin(qB1)*cos(qA1))*cos(qC1)]
 
 
 
@@ -306,8 +308,8 @@ eq_scalar
 ```python
 # Define Independent and Dependent Variables
 
-qi = [qA1,qA2]
-qd = [qB1,qC1,qB2]
+qi = [qA1,qA2,qB1]
+qd = [qC1,qB2]
 
 eq_scalar_c = [item.subs(system.constant_values) for item in eq_scalar]
 
@@ -359,7 +361,7 @@ result.fun
 
 
 
-    3.2386138749824837e-12
+    5.30403110161118e-09
 
 
 
@@ -372,14 +374,14 @@ points.calc(numpy.array([ini0,ini]),numpy.array([0,1]))
 points.plot_time()
 ```
 
-    2022-02-22 06:53:47,972 - pynamics.output - INFO - calculating outputs
-    2022-02-22 06:53:47,974 - pynamics.output - INFO - done calculating outputs
+    2022-02-25 09:12:36,216 - pynamics.output - INFO - calculating outputs
+    2022-02-25 09:12:36,218 - pynamics.output - INFO - done calculating outputs
     
 
 
 
 
-    <matplotlib.axes._subplots.AxesSubplot at 0x7f4274fe2e10>
+    <AxesSubplot:>
 
 
 
@@ -394,15 +396,15 @@ points.plot_time()
 # Define a new State for Joint Angles based on Optimization Equation:
 
 state2 = {}
-state2[qA1] = (0)*pi/180
+state2[qA1] = initialvalues[qA1]
 state2[qA1_d]= 0*pi/180
-state2[qB1]= result.x[0]
+state2[qB1]= initialvalues[qB1]
 state2[qB1_d] = 0*pi/180
-state2[qC1] = result.x[1]
+state2[qC1] = result.x[0]
 state2[qC1_d] = 0*pi/180
-state2[qA2] = (-100)*pi/180
+state2[qA2] = initialvalues[qA2]
 state2[qA2_d] = 0*pi/180
-state2[qB2] = result.x[2]
+state2[qB2] = result.x[1]
 state2[qB2_d] = 0*pi/180
 ```
 
@@ -422,9 +424,8 @@ eq_d
 
 
     Matrix([
-    [qA1_d*((-sin(qA1)*sin(qB1) + cos(qA1)*cos(qB1))*sin(qC1) + (sin(qA1)*cos(qB1) + sin(qB1)*cos(qA1))*cos(qC1) + 0.75*sin(qA1)*cos(qB1) + sin(qA1) + 0.75*sin(qB1)*cos(qA1)) + qA2_d*(-0.5*sin(qA2)*cos(qB2) - 0.75*sin(qA2) - 0.5*sin(qB2)*cos(qA2)) + qB1_d*((-sin(qA1)*sin(qB1) + cos(qA1)*cos(qB1))*sin(qC1) + (sin(qA1)*cos(qB1) + sin(qB1)*cos(qA1))*cos(qC1) + 0.75*sin(qA1)*cos(qB1) + 0.75*sin(qB1)*cos(qA1)) + qB2_d*(-0.5*sin(qA2)*cos(qB2) - 0.5*sin(qB2)*cos(qA2)) + qC1_d*(-(sin(qA1)*sin(qB1) - cos(qA1)*cos(qB1))*sin(qC1) + (sin(qA1)*cos(qB1) + sin(qB1)*cos(qA1))*cos(qC1))],
-    [  qA1_d*((sin(qA1)*sin(qB1) - cos(qA1)*cos(qB1))*cos(qC1) + (sin(qA1)*cos(qB1) + sin(qB1)*cos(qA1))*sin(qC1) + 0.75*sin(qA1)*sin(qB1) - 0.75*cos(qA1)*cos(qB1) - cos(qA1)) + qA2_d*(-0.5*sin(qA2)*sin(qB2) + 0.5*cos(qA2)*cos(qB2) + 0.75*cos(qA2)) + qB1_d*((sin(qA1)*sin(qB1) - cos(qA1)*cos(qB1))*cos(qC1) + (sin(qA1)*cos(qB1) + sin(qB1)*cos(qA1))*sin(qC1) + 0.75*sin(qA1)*sin(qB1) - 0.75*cos(qA1)*cos(qB1)) + qB2_d*(-0.5*sin(qA2)*sin(qB2) + 0.5*cos(qA2)*cos(qB2)) + qC1_d*((sin(qA1)*sin(qB1) - cos(qA1)*cos(qB1))*cos(qC1) - (-sin(qA1)*cos(qB1) - sin(qB1)*cos(qA1))*sin(qC1))],
-    [                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      qC1_d]])
+    [qA1_d*(0.05*(-sin(qA1)*sin(qB1) + cos(qA1)*cos(qB1))*sin(qC1) + 0.05*(sin(qA1)*cos(qB1) + sin(qB1)*cos(qA1))*cos(qC1) + 0.0375*sin(qA1)*cos(qB1) + 0.05*sin(qA1) + 0.0375*sin(qB1)*cos(qA1)) + qA2_d*(-0.025*sin(qA2)*cos(qB2) - 0.0375*sin(qA2) - 0.025*sin(qB2)*cos(qA2)) + qB1_d*(0.05*(-sin(qA1)*sin(qB1) + cos(qA1)*cos(qB1))*sin(qC1) + 0.05*(sin(qA1)*cos(qB1) + sin(qB1)*cos(qA1))*cos(qC1) + 0.0375*sin(qA1)*cos(qB1) + 0.0375*sin(qB1)*cos(qA1)) + qB2_d*(-0.025*sin(qA2)*cos(qB2) - 0.025*sin(qB2)*cos(qA2)) + qC1_d*(-0.05*(sin(qA1)*sin(qB1) - cos(qA1)*cos(qB1))*sin(qC1) + 0.05*(sin(qA1)*cos(qB1) + sin(qB1)*cos(qA1))*cos(qC1))],
+    [  qA1_d*(0.05*(sin(qA1)*sin(qB1) - cos(qA1)*cos(qB1))*cos(qC1) + 0.05*(sin(qA1)*cos(qB1) + sin(qB1)*cos(qA1))*sin(qC1) + 0.0375*sin(qA1)*sin(qB1) - 0.0375*cos(qA1)*cos(qB1) - 0.05*cos(qA1)) + qA2_d*(-0.025*sin(qA2)*sin(qB2) + 0.025*cos(qA2)*cos(qB2) + 0.0375*cos(qA2)) + qB1_d*(0.05*(sin(qA1)*sin(qB1) - cos(qA1)*cos(qB1))*cos(qC1) + 0.05*(sin(qA1)*cos(qB1) + sin(qB1)*cos(qA1))*sin(qC1) + 0.0375*sin(qA1)*sin(qB1) - 0.0375*cos(qA1)*cos(qB1)) + qB2_d*(-0.025*sin(qA2)*sin(qB2) + 0.025*cos(qA2)*cos(qB2)) + qC1_d*(0.05*(sin(qA1)*sin(qB1) - cos(qA1)*cos(qB1))*cos(qC1) - 0.05*(-sin(qA1)*cos(qB1) - sin(qB1)*cos(qA1))*sin(qC1))]])
 
 
 
@@ -432,9 +433,9 @@ eq_d
 ```python
 # Define Independent and Dependent Variables:
 
-qi = sympy.Matrix([qA1_d,qA2_d])
+qi = sympy.Matrix([qA1_d,qA2_d,qB1_d])
 
-qd = sympy.Matrix([qB1_d,qC1_d,qB2_d])
+qd = sympy.Matrix([qC1_d,qB2_d])
 ```
 
 
@@ -491,8 +492,8 @@ J
 
 
     Matrix([
-    [(-lA1*(-0.1875*cos(qA2 - qB1 + qB2) + 0.1875*cos(2*qA1 - qA2 + qB1 - qB2) - 0.25*cos(qA2 - qB1 + qB2 - qC1) + 0.25*cos(2*qA1 - qA2 + qB1 - qB2 + qC1)) + (lA3 + lB2)*(0.75*sin(qB1) + 1.0*sin(qB1 + qC1))*sin(qA2 + qB2))/(-0.5*sin(qB1)*sin(qC1)*sin(-qA1 + qA2 + qB2) + 0.5*sin(qB2)*cos(qC1)*cos(qA1 - qA2 + qB1) - 0.5*sin(qA1 - qA2)*cos(qB1)*cos(qB2 - qC1) - 0.5*sin(qB1 + qC1)*cos(qB2)*cos(qA1 - qA2) - 0.375*sin(qA1 - qA2 + qB1 - qB2)), (lA3 + lB2)*(0.28125*cos(qA1 + qB1 + qB2) - 0.28125*cos(qA1 - 2*qA2 + qB1 - qB2) + 0.375*cos(qA1 + qB1 + qB2 + qC1) - 0.375*cos(qA1 - 2*qA2 + qB1 - qB2 + qC1))/(-0.5*sin(qB1)*sin(qC1)*sin(-qA1 + qA2 + qB2) + 0.5*sin(qB2)*cos(qC1)*cos(qA1 - qA2 + qB1) - 0.5*sin(qA1 - qA2)*cos(qB1)*cos(qB2 - qC1) - 0.5*sin(qB1 + qC1)*cos(qB2)*cos(qA1 - qA2) - 0.375*sin(qA1 - qA2 + qB1 - qB2))],
-    [  (lA1*(0.1875*sin(qA2 - qB1 + qB2) - 0.1875*sin(2*qA1 - qA2 + qB1 - qB2) + 0.25*sin(qA2 - qB1 + qB2 - qC1) - 0.25*sin(2*qA1 - qA2 + qB1 - qB2 + qC1)) - (lA3 + lB2)*(0.75*sin(qB1) + 1.0*sin(qB1 + qC1))*cos(qA2 + qB2))/(-0.5*sin(qB1)*sin(qC1)*sin(-qA1 + qA2 + qB2) + 0.5*sin(qB2)*cos(qC1)*cos(qA1 - qA2 + qB1) - 0.5*sin(qA1 - qA2)*cos(qB1)*cos(qB2 - qC1) - 0.5*sin(qB1 + qC1)*cos(qB2)*cos(qA1 - qA2) - 0.375*sin(qA1 - qA2 + qB1 - qB2)), (lA3 + lB2)*(0.28125*sin(qA1 + qB1 + qB2) + 0.28125*sin(qA1 - 2*qA2 + qB1 - qB2) + 0.375*sin(qA1 + qB1 + qB2 + qC1) + 0.375*sin(qA1 - 2*qA2 + qB1 - qB2 + qC1))/(-0.5*sin(qB1)*sin(qC1)*sin(-qA1 + qA2 + qB2) + 0.5*sin(qB2)*cos(qC1)*cos(qA1 - qA2 + qB1) - 0.5*sin(qA1 - qA2)*cos(qB1)*cos(qB2 - qC1) - 0.5*sin(qB1 + qC1)*cos(qB2)*cos(qA1 - qA2) - 0.375*sin(qA1 - qA2 + qB1 - qB2))]])
+    [-(lA1*sin(qA1)*sin(qA1 - qA2 + qB1 - qB2 + qC1) + 1.0*(lA3 + lB2)*(1.5*sin(qC1) + 2.0*sin(qB1 + qC1))*sin(qA2 + qB2))/sin(qA1 - qA2 + qB1 - qB2 + qC1), (lA3 + lB2)*(-sin(qA2 + qB2)*sin(qA1 - qA2 + qB1 - qB2 + qC1) - 0.5*cos(qA1 + qB1 + qC1) - 0.75*cos(qA1 + qB1 + qB2 + qC1) + 0.5*cos(qA1 - 2*qA2 + qB1 - 2*qB2 + qC1) + 0.75*cos(qA1 - 2*qA2 + qB1 - qB2 + qC1))/sin(qA1 - qA2 + qB1 - qB2 + qC1), -1.5*(lA3 + lB2)*sin(qC1)*sin(qA2 + qB2)/sin(qA1 - qA2 + qB1 - qB2 + qC1)],
+    [ (lA1*sin(qA1 - qA2 + qB1 - qB2 + qC1)*cos(qA1) + 1.0*(lA3 + lB2)*(1.5*sin(qC1) + 2.0*sin(qB1 + qC1))*cos(qA2 + qB2))/sin(qA1 - qA2 + qB1 - qB2 + qC1), (lA3 + lB2)*(-0.5*sin(qA1 + qB1 + qC1) - 0.75*sin(qA1 + qB1 + qB2 + qC1) - 0.5*sin(qA1 - 2*qA2 + qB1 - 2*qB2 + qC1) - 0.75*sin(qA1 - 2*qA2 + qB1 - qB2 + qC1) + sin(qA1 - qA2 + qB1 - qB2 + qC1)*cos(qA2 + qB2))/sin(qA1 - qA2 + qB1 - qB2 + qC1),  1.5*(lA3 + lB2)*sin(qC1)*cos(qA2 + qB2)/sin(qA1 - qA2 + qB1 - qB2 + qC1)]])
 
 
 
@@ -507,7 +508,7 @@ print(J2)
 ```
 
     J2: 
-    Matrix([[1.16333406380973, -1.37326967767182], [3.43560004896815, -2.87512916387104]])
+    Matrix([[0.175363246428746, -0.0803987556235186, 0.117874249295033], [0.162325666854240, -0.0514979280070080, 0.0755021586714711]])
     
 
 ### Joint Velocities: (From Jacobian)
@@ -524,7 +525,7 @@ print(q_d)
 ```
 
     q_d: 
-    Matrix([[15.0689406870655], [-16.6078259405893]])
+    Matrix([[1.91595813114170], [-0.855485484242194], [1.25424465162180]])
     
 
 ### Forces and Torques: (Using Jacobian)
@@ -546,9 +547,9 @@ print(T)
 ```
 
     f: 
-    Matrix([[9.81000000000000], [42.1830000000000]])
+    Matrix([[4.90500000000000], [21.0915000000000]])
     T: 
-    Matrix([[156.336224031597], [-134.753349057533]])
+    Matrix([[4.28384852618920], [-1.48052444489317], [2.17062697241147]])
     
 
 ## Discussion:
