@@ -21,4 +21,5 @@ How can we utilize foldable techniques to develop and incrementally adjust the g
 [Assignment 2: Biomechanics Background and Initial Specifications](/assignment-2-biomechanics)\
 [Assignment 3: System Kinematics](https://nbviewer.org/github/matt-nolan11/matt-nolan11.github.io/blob/main/System_Kinematics_Final.ipynb)\
 [Presentation 1](/presentation-1)\
-[Assignment 4: System Dynamics](https://nbviewer.org/github/matt-nolan11/matt-nolan11.github.io/blob/main/System_Dynamics_Final.ipynb)
+[Assignment 4: System Dynamics](https://nbviewer.org/github/matt-nolan11/matt-nolan11.github.io/blob/main/System_Dynamics_Final.ipynb)\
+[Presentation 2](/presentation-2)
