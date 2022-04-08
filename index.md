@@ -8,8 +8,9 @@ title: Home
 ## Team Members
 * Viraj Kanchan - vkancha3@asu.edu
 * Nathan Mayer - ncmayer@asu.edu
-* Matthew Nolan - mjnolan3@asu.edu
 * Shubang Mukund - smukund9@asu.edu
+* Matthew Nolan - mjnolan3@asu.edu
+
 
 ## Research Question
 
