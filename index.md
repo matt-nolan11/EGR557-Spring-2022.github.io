@@ -20,7 +20,7 @@ How can material stiffness of an end effector affect the performance of a quadru
 
 This project focuses on the design and analysis of a canine-inspired robotic leg mechanism. The team leverages foldable techniques and laminate manufacturing to construct a prototype of the mechanism out of cheap, readily available materials. The mechanism in question is essentially a planar five-bar linkage with one extended link serving as the end effector. This end effector was 3D printed so that its thickness (and therefore stiffness) could be finely adjusted. The mechanism was mounted to a 4-wheel test platform and attached to two hobby servo motors to actuate the two control angles. and various hardware and software parameters were tested to optimize the gait performance. 
 
-![image7](/Photos/IMG_6110.jpg)/
+![image7](/Photos/IMG_6110.jpg)
 
 [Developing a Research Question](/assignment-1-research-question)\
 [Biomechanics Background and Initial Specifications](Biomechanics_Background_and_Initial_Specifications.pdf)\
