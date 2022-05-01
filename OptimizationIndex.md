@@ -9,7 +9,7 @@ Based on the results and lengthy run-time of our System Dynamics code, the team 
 Several specific research questions are posed in the Optimization Plan, and each of them are answered in the successive documents.
 
 [Optimization Plan](\Optimization_Plan.pdf)\
-[Stiffness vs. Speed (Viraj](stiffness_vs_speed.pdf)\
+[Stiffness vs. Speed (Viraj)](stiffness_vs_speed.pdf)\
 [Geometry vs.Stiffness (Viraj)]()\
 [Stiffness vs. Height (Matthew)](https://nbviewer.org/github/matt-nolan11/matt-nolan11.github.io/blob/main/Stiffness_vs_Height.ipynb)\
 [Gait Size vs. Kinetic Energy (Nathan)](https://nbviewer.org/github/matt-nolan11/matt-nolan11.github.io/blob/main/Gait_Size_vs_Kinetic_Energy.ipynb)\
