@@ -8,7 +8,7 @@ Based on the results and lengthy run-time of our System Dynamics code, the team 
 
 [Optimization Plan](\Optimization_Plan.pdf)\
 [Stiffness vs. Speed](StiffnessvSpeed.pdf)\
-[Stiffness vs. Height](Vertical_Displacement_vs_Stiffness.ipynb)\
+[Stiffness vs. Height](Stiffness_vs_Height.ipynb)\
 [Gait Size vs. Kinetic Energy]\
 [Gait Size vs. Speed]\
 [Mass vs. Speed]\
