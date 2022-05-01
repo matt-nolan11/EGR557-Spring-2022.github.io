@@ -30,4 +30,8 @@ This project focuses on the design and analysis of a canine-inspired robotic leg
 [Manufacturing Planning](/ManufacturingPlanningIndex)\
 [Presentation 1](/presentation-1)\
 [Presentation 2](/presentation-2)\
-[Presentation 3](/presentation-3)
+[Presentation 3](/presentation-3)\
+[Data](/raw_data.zip)\
+[Gallery]()\
+[CAD]()\
+[Code]()
