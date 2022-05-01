@@ -3,9 +3,7 @@
 Group Members: Viraj Kanchan, Nathan Mayer, Shubang Mukund, and Matthew
 Nolan
 
-<u>Research Question</u>: How can we utilize foldable techniques to
-develop and incrementally adjust the geometry of mechanisms in order to
-mimic quadrupedal motions and optimize gaits for two different terrains?
+<u>Research Question</u>: How can material stiffness of an end effector affect the performance of a quadrupedal, foldable robotic system?
 
 <u>Background: (Viraj)</u> Each member of the team is inspired by
 distinct aspects of quadrupedal motion. The ideas ranged from developing
@@ -27,9 +25,7 @@ with or without minimal changes to itself should be able to have a
 different motion at the end effector. The aforementioned "minimal
 change" would be preferably automated and would react to a certain
 trigger switch which may or may not be remotely activated. This change
-in output can be, but not limited to, a change in length of the links or
-by folding on a different crease/axis as compared to the initial
-configuration.
+in output will focus on tuning the thickness of the end effector to adjust its stiffness.
 
 <u>Tractability: (Viraj)</u> We have reserved the entire project to just
 achieve the above mechanism and are not necessarily promising to build a
@@ -99,7 +95,7 @@ as a group.
 <u>Topic Fit: (Shubang)</u> The research question requires foldable
 robotics techniques as a vital element as the material to be used, and
 the kinematics to be created are both based on foldable robotics
-techniques. The dynamics, optimisation of material, kinematics and other
+techniques. The dynamics, optimization of material, kinematics and other
 crucial roles and steps, constraints like the same piece of hardware
 with or without minimal changes to itself should be able to have a
 different motion at the end effector that are essential in making the
