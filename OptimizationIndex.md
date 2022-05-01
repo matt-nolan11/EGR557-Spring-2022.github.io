@@ -11,6 +11,6 @@ Several specific research questions are posed in the Optimization Plan, and each
 [Optimization Plan](\Optimization_Plan.pdf)\
 [Stiffness vs. Speed](stiffness_vs_speed.pdf)\
 [Stiffness vs. Height](https://nbviewer.org/github/matt-nolan11/matt-nolan11.github.io/blob/main/Stiffness_vs_Height.ipynb)\
-[Gait Size vs. Kinetic Energy](https://nbviewer.org/github/matt-nolan11/matt-nolan11.github.io/blob/main/Stiffness_vs_Height.ipynb)\
-[Gait Size vs. Speed](https://nbviewer.org/github/matt-nolan11/matt-nolan11.github.io/blob/main/Stiffness_vs_Height.ipynb)\
+[Gait Size vs. Kinetic Energy](https://nbviewer.org/github/matt-nolan11/matt-nolan11.github.io/blob/main/Gait_Size_vs_Kinetic_Energy.ipynb)\
+[Gait Size vs. Speed](https://nbviewer.org/github/matt-nolan11/matt-nolan11.github.io/blob/main/Gait_Size_vs_Speed.ipynb)\
 [Mass vs. Speed](mass_vs_speed.pdf)\
