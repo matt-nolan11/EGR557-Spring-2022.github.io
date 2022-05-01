@@ -32,6 +32,6 @@ This project focuses on the design and analysis of a canine-inspired robotic leg
 [Presentation 2](/presentation-2)\
 [Presentation 3](/presentation-3)\
 [Data](/raw_data.zip)\
-[Gallery](Gallery)\
-[CAD]()\
+[Gallery](/Gallery)\
+[CAD](/CAD)\
 [Code]()
