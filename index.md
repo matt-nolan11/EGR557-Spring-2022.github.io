@@ -27,7 +27,7 @@ This project focuses on the design and analysis of a canine-inspired robotic leg
 [System Dynamics 2](https://nbviewer.org/github/matt-nolan11/matt-nolan11.github.io/blob/main/System_Dynamics_2.ipynb)\
 [Parameter Identification](/ParameterIDIndex)\
 [Design Optimization, Experiment Design, Data Collection, and Analysis](/OptimizationIndex)\
-[Manufacturing Planning](/ManufacturingPlanningIndex)\
+[Manufacturing Planning](https://nbviewer.org/github/matt-nolan11/matt-nolan11.github.io/blob/main/Finalized_D_M_Workflow.ipynb)\
 [Presentation 1](/presentation-1)\
 [Presentation 2](/presentation-2)\
 [Presentation 3](/presentation-3)\
